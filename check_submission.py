@@ -29,8 +29,7 @@ def first_folder(path):
 
 def main():
     if len(sys.argv) < 2:
-        print("%s zipname" % sys.argv[0])
-        sys.exit(1)
+        die("%s zipname" % sys.argv[0])
 
     filename = sys.argv[1]
 
