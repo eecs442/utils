@@ -1,8 +1,10 @@
 # !/usr/bin/python
 # David Fouhey
+# modified by Qichen Fu on 2019.2.3
 # 442 submission format checker
 #
-# This should only accept a zip file containing a single folder ${uniqname}
+# This should only accept a zip file containing a single folder ${uniqname} and which homework ${hwi}
+# e.g. python check_submission.py myuniqname hw1
 # In particular, it will fail for:
 #    -Files outside that folder
 #    -Multiple folders (although __MACOSX is fine)
@@ -27,12 +29,13 @@ def first_folder(path):
         path = nextPath
 
 
-def main():
+def main(hws):
     if len(sys.argv) < 2:
         print("%s zipname" % sys.argv[0])
         sys.exit(1)
 
     filename = sys.argv[1]
+    hw = sys.argv[2]
 
     if not os.path.exists(filename):
         die("Oops! %s doesn't exist" % filename)
@@ -46,12 +49,15 @@ def main():
         die("Oops! I can't can't open %s")
 
     subdirs = set()
-
+    files = set()
     for zfFilen in zf.namelist():
         head, tail = os.path.split(zfFilen)
         if head == "":
             die("I found a file that's not in a directory: %s" % zfFilen)
         subdirs.add(first_folder(zfFilen))
+        # Handle macs, sigh again
+        if first_folder(zfFilen) != "__MACOSX" and os.path.isfile(zfFilen):
+            files.add(os.path.basename(zfFilen))
 
     # Handle macs, sigh
     subdirs.discard("__MACOSX")
@@ -60,9 +66,31 @@ def main():
         subdir_str = ', '.join(list(subdirs))
         die("There are multiple root subfolders: %s" % subdir_str)
 
+    # test if files have been included
+    required_files = set(hws[int(hw[2:])])
+    for file in files:
+        # stop when all the required files included
+        if not required_files:
+            break
+        if file in required_files:
+            required_files.remove(file)
+    if required_files:
+        missing_files = ', '.join(list(required_files))
+        die("I can't these files: %s" % missing_files)
+
     zf.close()
     print("Tests passsed, assuming your uniqname is ``%s''" % list(subdirs)[0])
 
 
 if __name__ == "__main__":
-    main()
+    # Please hard code the required files for each homework here
+    # students please DO NOT modify this
+    hws = [
+        [],  # hw0
+        ["main.py", "util.py", "cube.gif", "im1.jpg", "im2.jpg", "info.txt"],  # hw1
+        [],  # hw2
+        [],  # hw3
+        [],  # hw4
+        [],  # hw5
+    ]
+    main(hws)
