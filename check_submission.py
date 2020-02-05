@@ -56,7 +56,7 @@ def main(hws):
             die("I found a file that's not in a directory: %s" % zfFilen)
         subdirs.add(first_folder(zfFilen))
         # Handle macs, sigh again
-        if first_folder(zfFilen) != "__MACOSX" and os.path.isfile(zfFilen):
+        if first_folder(zfFilen) != "__MACOSX" and os.path.basename(zfFilen) != '':
             files.add(os.path.basename(zfFilen))
 
     # Handle macs, sigh
