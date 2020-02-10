@@ -89,8 +89,16 @@ if __name__ == "__main__":
         [],  # hw0
         ["main.py", "util.py", "cube.gif", "im1.jpg", "im2.jpg", "info.txt"],  # hw1
         [],  # hw2
-        [],  # hw3
+        ["main.py", "transform.png", "uttower.jpg",
+            "bbb.jpg", "uttower_matches.jpg", "bbb_matches.jpg", "frontal.jpg", 
+            "patterns.jpg", "render_frontal.jpg", "non_frontal.jpg", "render_non_frontal.jpg"
+        ],# hw3
         [],  # hw4
         [],  # hw5
     ]
+    # hw3
+    hws[3].extend(["case_{}.png".format(i) for i in range(8)])
+    hws[3].extend(["{}_{}_{}.jpg".format(i, j, k) for i in ["uttower", "bbb"] 
+        for j in ["left", "right"] for k in ["gray", "descriptor"]])
+        
     main(hws)
