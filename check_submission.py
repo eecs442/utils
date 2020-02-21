@@ -4,7 +4,7 @@
 # 442 submission format checker
 #
 # This should only accept a zip file containing a single folder ${uniqname} and which homework ${hwi}
-# e.g. python check_submission.py myuniqname hw1
+# e.g. python check_submission.py myuniqname.zip hw1
 # In particular, it will fail for:
 #    -Files outside that folder
 #    -Multiple folders (although __MACOSX is fine)
@@ -36,6 +36,9 @@ def main(hws):
 
     filename = sys.argv[1]
     hw = sys.argv[2]
+
+    if len(hws[int(hw[2:])]) == 0:
+        die("Please update this check_submission.py file")
 
     if not os.path.exists(filename):
         die("Oops! %s doesn't exist" % filename)
@@ -88,7 +91,7 @@ if __name__ == "__main__":
     hws = [
         [],  # hw0
         ["main.py", "util.py", "cube.gif", "im1.jpg", "im2.jpg", "info.txt"],  # hw1
-        [],  # hw2
+        ["filter.py", "corners.py", "blob_detection.py", "common.py"],  # hw2
         ["main.py", "transform.png", "uttower.jpg",
             "bbb.jpg", "uttower_matches.jpg", "bbb_matches.jpg", "frontal.jpg", 
             "patterns.jpg", "render_frontal.jpg", "non_frontal.jpg", "render_non_frontal.jpg"
