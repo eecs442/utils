@@ -95,7 +95,7 @@ if __name__ == "__main__":
             "bbb.jpg", "uttower_matches.jpg", "bbb_matches.jpg", "frontal.jpg", 
             "patterns.jpg", "render_frontal.jpg", "non_frontal.jpg", "render_non_frontal.jpg"
         ],# hw3
-        ["layers.py", "fitting.py", "softmax.py", "train.py","fooling_images.py"],  # hw4
+        ["layers.py", "fitting.py", "softmax.py", "train.py", "fooling_images.py"],  # hw4
         [],  # hw5
     ]
     # hw3
