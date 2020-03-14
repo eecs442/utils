@@ -1,6 +1,5 @@
-# !/usr/bin/python
 # David Fouhey
-# modified by Qichen Fu on 2019.2.3
+# modified by Shengyu Feng on 2019.3.10
 # 442 submission format checker
 #
 # This should only accept a zip file containing a single folder ${uniqname} and which homework ${hwi}
@@ -96,7 +95,7 @@ if __name__ == "__main__":
             "bbb.jpg", "uttower_matches.jpg", "bbb_matches.jpg", "frontal.jpg", 
             "patterns.jpg", "render_frontal.jpg", "non_frontal.jpg", "render_non_frontal.jpg"
         ],# hw3
-        [],  # hw4
+        ["layers.py", "fitting.py", "softmax.py", "train.py","fooling_images.py"],  # hw4
         [],  # hw5
     ]
     # hw3
@@ -105,3 +104,4 @@ if __name__ == "__main__":
         for j in ["left", "right"] for k in ["gray", "descriptor"]])
         
     main(hws)
+
