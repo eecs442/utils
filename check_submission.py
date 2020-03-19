@@ -96,7 +96,7 @@ if __name__ == "__main__":
             "patterns.jpg", "render_frontal.jpg", "non_frontal.jpg", "render_non_frontal.jpg"
         ],# hw3
         ["layers.py", "fitting.py", "softmax.py", "train.py", "fooling_images.py"],  # hw4
-        [],  # hw5
+        ["part1.py", "part2.py", "train.py"],  # hw5
     ]
     # hw3
     hws[3].extend(["case_{}.png".format(i) for i in range(8)])
