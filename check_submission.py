@@ -91,10 +91,7 @@ if __name__ == "__main__":
         [],  # hw0
         ["main.py", "util.py", "cube.gif", "im1.jpg", "im2.jpg", "info.txt"],  # hw1
         ["filters.py", "corners.py", "blob_detection.py", "common.py"],  # hw2
-        ["main.py", "transform.png", "uttower.jpg",
-            "bbb.jpg", "uttower_matches.jpg", "bbb_matches.jpg", "frontal.jpg", 
-            "patterns.jpg", "render_frontal.jpg", "non_frontal.jpg", "render_non_frontal.jpg"
-        ],# hw3
+        ["common.py", "homography.py", "task5.py", "task6.py", "mypanorama1.jpg", "mypanorama2.jpg"], # hw3
         ["layers.py", "fitting.py", "softmax.py", "train.py", "fooling_images.py"],  # hw4
         ["part1.py", "part2.py", "train.py"],  # hw5
     ]
