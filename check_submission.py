@@ -95,10 +95,6 @@ if __name__ == "__main__":
         ["layers.py", "fitting.py", "softmax.py", "train.py", "fooling_images.py"],  # hw4
         ["part1.py", "part2.py", "train.py"],  # hw5
     ]
-    # hw3
-    #hws[3].extend(["case_{}.png".format(i) for i in range(8)])
-    #hws[3].extend(["{}_{}_{}.jpg".format(i, j, k) for i in ["uttower", "bbb"] 
-    #    for j in ["left", "right"] for k in ["gray", "descriptor"]])
         
     main(hws)
 
