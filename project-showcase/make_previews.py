@@ -53,7 +53,7 @@ def handle_file(args, in_path, out_path):
   page_imgs = []
   for i in range(args.pages):
     if i >= len(page_paths):
-      page_img = np.empty((height, width, 3), dtype=np.uint8)
+      page_img = np.empty((args.height, width, 3), dtype=np.uint8)
       page_img[:] = 255
       page_imgs.append(page_img)
       continue
