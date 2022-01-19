@@ -1,5 +1,5 @@
 # David Fouhey
-# modified by Shengyu Feng on 2019.3.10
+# last modified by Victor Li on 2022.1.19
 # 442 submission format checker
 #
 # This should only accept a zip file containing a single folder ${uniqname} and which homework ${hwi}
@@ -29,12 +29,15 @@ def first_folder(path):
 
 
 def main(hws):
-    if len(sys.argv) < 2:
-        print("%s zipname" % sys.argv[0])
+    if len(sys.argv) < 3:
+        print("Usage: %s ZIP_NAME(uniqname.zip) HW_NAME(hw0|hw1|...)" % sys.argv[0])
         sys.exit(1)
 
     filename = sys.argv[1]
     hw = sys.argv[2]
+
+    if hw not in ["hw0", "hw1", "hw2", "hw3", "hw4", "hw5"]:
+        die("Oops! %s is not a valid hw name" % hw)
 
     if len(hws[int(hw[2:])]) == 0:
         die("Please update this check_submission.py file")
@@ -43,7 +46,7 @@ def main(hws):
         die("Oops! %s doesn't exist" % filename)
 
     if not zipfile.is_zipfile(filename):
-        die("Oops! %s is not a zipfile" % filename)
+        die("Oops! %s is not a zipfile" % filename) 
 
     try:
         zf = zipfile.ZipFile(filename, 'r')
@@ -78,7 +81,7 @@ def main(hws):
             required_files.remove(file)
     if required_files:
         missing_files = ', '.join(list(required_files))
-        die("I can't these files: %s" % missing_files)
+        die("I can't find these files: %s" % missing_files)
 
     zf.close()
     print("Tests passsed, assuming your uniqname is ``%s''" % list(subdirs)[0])
@@ -88,7 +91,7 @@ if __name__ == "__main__":
     # Please hard code the required files for each homework here
     # students please DO NOT modify this
     hws = [
-        [],  # hw0
+        ["warmups.py", "tests.py", "dither.py", "mystery_visualize.py"],  # hw0
         ["main.py", "util.py", "cube.gif", "im1.jpg", "im2.jpg", "info.txt"],  # hw1
         ["filters.py", "corners.py", "blob_detection.py", "common.py"],  # hw2
         ["common.py", "homography.py", "task5.py", "task6.py", "mypanorama1.jpg", "mypanorama2.jpg"], # hw3
@@ -97,4 +100,3 @@ if __name__ == "__main__":
     ]
         
     main(hws)
-
