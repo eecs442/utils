@@ -1,5 +1,5 @@
 # David Fouhey
-# last modified by Victor Li on 2022.1.19
+# last modified by Nikhil Devraj on 2022.03.10
 # 442 submission format checker
 #
 # This should only accept a zip file containing a single folder ${uniqname} and which homework ${hwi}
@@ -95,7 +95,7 @@ if __name__ == "__main__":
         ["main.py", "util.py", "cube.gif", "im1.jpg", "im2.jpg", "info.txt"],  # hw1
         ["filters.py", "corners.py", "blob_detection.py", "common.py"],  # hw2
         ["common.py", "homography.py", "task5.py", "task6.py", "mypanorama1.jpg", "mypanorama2.jpg"], # hw3
-        ["layers.py", "fitting.py", "softmax.py", "train.py", "fooling_images.py"],  # hw4
+        ["layers.py", "fitting.py", "functions.py", "train.py", "two_layer_net.py"],  # hw4
         ["part1.ipynb", "part2.ipynb", "part3.ipynb"],  # hw5
     ]
         
