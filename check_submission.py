@@ -36,7 +36,7 @@ def main(hws):
     filename = sys.argv[1]
     hw = sys.argv[2]
 
-    if hw not in ["hw0", "hw1", "hw2", "hw3", "hw4", "hw5"]:
+    if hw not in ["hw0", "hw1", "hw2", "hw3", "hw4", "hw5", "hw6"]:
         die("Oops! %s is not a valid hw name" % hw)
 
     if len(hws[int(hw[2:])]) == 0:
@@ -97,6 +97,7 @@ if __name__ == "__main__":
         ["common.py", "homography.py", "task5.py", "task6.py", "mypanorama1.jpg", "mypanorama2.jpg"], # hw3
         ["layers.py", "fitting.py", "functions.py", "train.py", "two_layer_net.py"],  # hw4
         ["part1.ipynb", "part2.ipynb", "part3.ipynb"],  # hw5
+        ["task1.py", "task23.py"], # hw6
     ]
         
     main(hws)
