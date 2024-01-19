@@ -1,5 +1,5 @@
-# David Fouhey
-# last modified by Nikhil Devraj on 2022.03.10
+# Jeong Joon Park
+# last modified by Alex Janosi on 2024.01.18
 # 442 submission format checker
 #
 # This should only accept a zip file containing a single folder ${uniqname} and which homework ${hwi}
