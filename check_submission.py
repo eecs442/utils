@@ -92,7 +92,7 @@ if __name__ == "__main__":
     # students please DO NOT modify this
     hws = [
         [],# hw0
-        ["warmups.py", "tests.py", "dither.py", "mystery_visualize.py", "im1.jpg", "im2.jpg", "info.txt"],  # hw1
+        ["warmups.py", "tests.py", "dither.py", "mystery_visualize.py"],  # hw1
         ["filters.py", "corners.py", "blob_detection.py", "common.py"],  # hw2
         ["common.py", "homography.py", "task5.py", "task6.py", "mypanorama1.jpg", "mypanorama2.jpg"], # hw3
         ["layers.py", "fitting.py", "functions.py", "train.py", "two_layer_net.py"],  # hw4
