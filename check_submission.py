@@ -96,7 +96,7 @@ if __name__ == "__main__":
         ["filters.py", "corners.py", "blob_detection.py", "common.py"],  # hw2
         ["common.py", "homography.py", "task5.py", "task6.py", "mypanorama1.jpg", "mypanorama2.jpg"], # hw3
         ["layers.py", "fitting.py", "functions.py", "train.py", "two_layer_net.py"],  # hw4
-        ["part1.ipynb", "part2.ipynb", "part3.ipynb"],  # hw5
+        ["simple_diffusion.py", "condition_methods.py", "hw5_gan.ipynb", "hw5_diffusion.ipynb"],  # hw5
         ["task1.py", "task23.py"], # hw6
     ]
         
